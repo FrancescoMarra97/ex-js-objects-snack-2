@@ -104,3 +104,46 @@ Risposta:
 per clonara l'oggetto chef il metodo migliore è il metodo Spread, perchè al suo interno abbiamo una funzione e questo metodo ci permette di copiare le funzioni
 
 mentre per l'oggetto restaurant il metodo migliore è structuredClone(), perchè essendo presente new date al suo interno che è un oggetto complesso, ci permette di copiarlo sotto forma di oggetto. 
+
+
+*Snack 5 (Bonus)*
+
+Code Question 5 (Bonus)
+const hamburger = { 
+    name: "Cheese Burger", 
+    weight: 250,
+    maker: {
+        name: "Anonymous Chef",
+        restaurant: {
+            name: "Hyur's Burgers",
+            address: "Main Street, 123",
+            isOpen: true,
+        },
+        age: 29
+    }
+};
+​
+const newRestaurant = {...hamburger.maker.restaurant};
+newRestaurant.name = "Hyur's II";
+newRestaurant.address = "Second Street, 12";
+const secondBurger = {...hamburger};
+secondBurger.maker.restaurant = newRestaurant;
+secondBurger.maker.name = "Chef Hyur";
+​
+console.log(hamburger.maker.name); // ?
+console.log(secondBurger.maker.name); // ?
+console.log(hamburger.maker.restaurant.name); // ?
+console.log(secondBurger.maker.restaurant.name); // ?
+Senza lanciare il codice, riesci a prevedere cosa viene stampato in console?
+Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice?
+
+Risposte:
+console.log(hamburger.maker.name); => "Chef Hyur" 
+console.log(secondBurger.maker.name); => "Chef Hyur"
+console.log(hamburger.maker.restaurant.name); => "Hyur's Burgers" 
+console.log(secondBurger.maker.restaurant.name); => "Hyur's II" 
+
+L'oggetto originale hamburger (contiene maker e restaurant) => 1 oggetto principale + 2 oggetti interni = 3 oggetti
+L'oggetto newRestaurant => 1 nuovo oggetto
+L'oggetto secondBurger (ma maker rimane lo stesso riferimento) => 1 nuovo oggetto
+Totale: 5 oggetti creati in memoria.
