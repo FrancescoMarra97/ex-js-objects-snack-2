@@ -75,3 +75,32 @@ Alla fine, abbiamo:
 3 oggetti per secondBurger
 3 oggetti per thirdBurger
 Totale: 9 oggetti in memoria.
+
+
+*Snack 4*
+Code Question 4
+const chef = {
+    name: "Chef Hyur",
+    age: 29,
+    makeBurger: (num = 1) => {
+        console.log(`Ecco ${num} hamburger per te!`);
+    },
+}
+​
+const restaurant = {
+    name: "Hyur's Burgers",
+    address: {
+        street: 'Main Street',
+        number: 123,
+    },
+    openingDate: new Date(2025, 3, 11),
+    isOpen: false,
+};
+Qual è il metodo migliore per clonare l’oggetto chef, e perché?
+Qual è il metodo migliore per clonare l’oggetto restaurant, e perché?
+
+
+Risposta: 
+per clonara l'oggetto chef il metodo migliore è il metodo Reference, perchè al suo interno abbiamo una funzione ed è l'unico che ci permette di copiare le funzioni
+
+mentre per l'oggetto restaurant il metodo migliore è structuredClone(), perchè essendo presente new date al suo interno che è un oggetto complesso, ci permette di copiarlo sotto forma di oggetto. 
