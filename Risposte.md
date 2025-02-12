@@ -101,6 +101,6 @@ Qual è il metodo migliore per clonare l’oggetto restaurant, e perché?
 
 
 Risposta: 
-per clonara l'oggetto chef il metodo migliore è il metodo Reference, perchè al suo interno abbiamo una funzione ed è l'unico che ci permette di copiare le funzioni
+per clonara l'oggetto chef il metodo migliore è il metodo Spread, perchè al suo interno abbiamo una funzione ed è l'unico che ci permette di copiare le funzioni
 
 mentre per l'oggetto restaurant il metodo migliore è structuredClone(), perchè essendo presente new date al suo interno che è un oggetto complesso, ci permette di copiarlo sotto forma di oggetto. 
