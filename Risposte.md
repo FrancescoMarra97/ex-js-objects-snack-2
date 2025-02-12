@@ -42,3 +42,36 @@ Verrà stampato "Salad" ad entrambi perchè gli array (come gli oggetti) non ven
 perciò entrambi gli oggetti condividono lo stesso array in memoria. Essendo condiviso, quando si va a modificare ingredients di secondBurger si andrà a modificare anche ingredients di burger.
 
 Risposta 2: sono stati creati 2 oggetti in memoria 
+
+
+*Snack 3*
+Code Question 3
+const hamburger = { 
+    name: "Cheese Burger", 
+    weight: 250,
+    maker: {
+        name: "Anonymous Chef",
+        restaurant: {
+            name: "Hyur's Burgers",
+            address: "Main Street, 123",
+            isOpen: true,
+        },
+        age: 29
+    }
+};
+​
+const secondBurger = structuredClone(hamburger);
+const thirdBurger = structuredClone(hamburger);
+Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice?
+
+Risposta: 
+All'inizio abbiamo un oggetto chiamato hamburger, che contiene al suo interno altri due oggetti: maker e, dentro di questo, restaurant. Quindi, in memoria esistono 3 oggetti.
+
+Poi usiamo structuredClone(hamburger) per creare secondBurger e thirdBurger. Dato che questo metodo fa una copia completa e separata dell'oggetto, vengono creati altri 3 oggetti per ogni copia.
+
+Alla fine, abbiamo:
+
+3 oggetti dell'originale (hamburger, maker, restaurant)
+3 oggetti per secondBurger
+3 oggetti per thirdBurger
+Totale: 9 oggetti in memoria.
