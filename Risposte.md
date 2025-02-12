@@ -145,5 +145,5 @@ console.log(secondBurger.maker.restaurant.name); => "Hyur's II"
 
 L'oggetto originale hamburger (contiene maker e restaurant) => 1 oggetto principale + 2 oggetti interni = 3 oggetti
 L'oggetto newRestaurant => 1 nuovo oggetto
-L'oggetto secondBurger (ma maker rimane lo stesso riferimento) => 1 nuovo oggetto
+L'oggetto secondBurger (lo spread operator non copia gli oggetti annidati) => 1 nuovo oggetto
 Totale: 5 oggetti creati in memoria.
